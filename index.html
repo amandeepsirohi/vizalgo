@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>AlgoViz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link id="cssTheme" rel="stylesheet" href="public/styling/cssBasic.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/fluency/48/source-code.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Borel&family=DotGothic16&family=Playfair+Display:ital,wght@0,500;1,400&family=Poppins:wght@100;200;300;400;500&family=Rubik:wght@400;500;700&family=Teko:wght@500&family=Ubuntu+Condensed&family=Ysabeau+Office:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div  id='navbarDiv'>
+     <nav  style="background-color: black;" class="navbar navbar-inverse">
+       <div style="display: flex; flex-direction: column; margin-left: 0%; text-align: center;"  class="container-fluid">
+         <div  class="navbar-header">
+           <a   id="refreshButton" class="navbar-brand" href="#">AlgoViz </a>
+           <img width="48" height="48" src="https://img.icons8.com/fluency/48/source-code.png" alt="source-code"/>
+         </div>
+         <div>
+          <ul style="padding-left: 250px;" class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Algorithms
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li id='startButtonDijkstra'><a href="#">Dijkstra's Algorithm</a></li>
+                <li  id='startButtonAStar2'><a href="#">A* Search</a></li>
+                <li id='startButtonGreedy'><a href="#">Greedy Best-first Search</a></li>
+                <li style="display: none;" id='startButtonAStar'><a href="#">Swarm Algorithm</a></li>
+                <li style="display: none;" id='startButtonAStar3'><a href="#">Convergent Swarm Algorithm</a></li>
+                <li style="display: none;" id='startButtonBidirectional'><a href="#">Bidirectional Swarm Algorithm</a></li>
+                <li id='startButtonBFS'><a href="#">Breadth-first Search</a></li>
+                <li id='startButtonDFS'><a href="#">Depth-first Search</a></li>
+              </ul>
+            </li>
+            <li style="display: none;" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mazes &amp; Patterns
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li id='startButtonCreateMazeTwo'><a href="#">Recursive Division</a></li>
+                <li id='startButtonCreateMazeThree'><a href="#">Recursive Division (vertical skew)</a></li>
+                <li id='startButtonCreateMazeFour'><a href="#">Recursive Division (horizontal skew)</a></li>
+                <li id='startButtonCreateMazeOne'><a href="#">Basic Random Maze</a></li>
+                <li id='startButtonCreateMazeWeights'><a href="#">Basic Weight Maze</a></li>
+                <li id='startStairDemonstration'><a href="#">Simple Stair Pattern</a></li>
+              </ul>
+            </li>
+            <li style="background-color: black;" id='startButtonAddObject'><a href="#">Add Bomb</a></li>
+            <li style="background-color: black;" id='startButtonStart'><button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize!</button></li>
+            <li style="background-color: black;" id='startButtonClearBoard'><a href="#">Clear Board</a></li>
+            <li style="background-color: black;" id='startButtonClearWalls'><a href="#">Clear Walls &amp; Weights</a></li>
+            <li style="background-color: black;" id='startButtonClearPath'><a href="#">Clear Path</a></li>
+            <li class="dropdown">
+              <a id="adjustSpeed" class="dropdown-toggle" data-toggle="dropdown" href="#">Speed: Fast
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li id='adjustFast'><a href="#">Fast</a></li>
+                <li id='adjustAverage'><a href="#">Average</a></li>
+                <li id='adjustSlow'><a href="#">Slow</a></li>
+              </ul>
+            </li>
+          </ul>
+         </div>
+       </div>
+     </nav>
+   </div>
+    <div style="top: 200px; height: 140px; width: 200px; text-align: center; background-color: black;"  id="tutorial">
+      
+      <button style="margin-bottom:40px ; margin-left: 28px; font-size: 20px; font-weight: 700;"  id="skipButton" class="btn btn-default navbar-btn" type="button">Enter Game</button> 
+    </div>
+    <div    id='mainGrid'>
+      <div id='mainText'>
+        <ul style="display: flex; justify-content: space-between; align-items: center; background-color: black; color: white; padding: 30px; font-weight: 600; font-size: 20px;">
+          <li>
+            <div  class="start"></div>Start Node</li>
+          <li>
+            <div class="target"></div>Target Node</li>
+          <li id="bombLegend">
+            <div class="object"></div>Bomb Node</li>
+          <li id="weightLegend">
+            <div  class="borderlessWeight"></div>*Weight</li>
+          <li>
+            <div class="unvisited"></div>Unvisited Node</li>
+          <li>
+            <div class="visited"></div><div class="visitedobject"></div>Visited Nodes</li>
+          <li>
+            <div class="shortest-path"></div>Shortest-path Node</li>
+          <li>
+            <div class="wall"></div>Wall Node</li>
+        </ul>
+      </div>
+      <div style="font-weight: 700; font-size: 25px;" id="algorithmDescriptor">Pick an algorithm and visualize it!</div>
+      <table  id='board'/>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='public/browser/bundle.js'></script>
+</html>
